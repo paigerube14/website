@@ -1,5 +1,4 @@
 ---
-type: "docs/scenarios"
 title: Hog Scenarios
 description: 
 date: 2017-01-04
