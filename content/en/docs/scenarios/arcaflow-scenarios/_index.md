@@ -2,7 +2,7 @@
 title: Arcaflow Scenarios
 description: 
 date: 2017-01-04
-weight: 1
+weight: 2
 ---
 
 Arcaflow is a workflow engine in development which provides the ability to execute workflow steps in sequence, in parallel, repeatedly, etc. The main difference to competitors such as Netflix Conductor is the ability to run ad-hoc workflows without an infrastructure setup required.

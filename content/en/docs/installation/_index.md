@@ -3,7 +3,7 @@ title: Installation
 description: 
 categories: [Installation]
 tags: [install, docs]
-weight: 2
+weight: 3
 ---
 
 <!-- {{% pageinfo %}}
