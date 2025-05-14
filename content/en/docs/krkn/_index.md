@@ -51,10 +51,10 @@ For cases where you want to run Krkn with minimal configuration changes, refer t
 Instructions on how to setup the config and the options supported can be found at [Config](config.md).
 
 
-### Krkn scenario pass/fail criteria and report
-It is important to make sure to check if the targeted component recovered from the chaos injection and also if the Kubernetes cluster is healthy as failures in one component can have an adverse impact on other components. Krkn does this by:
+### Kraken scenario pass/fail criteria and report
+It is important to make sure to check if the targeted component recovered from the chaos injection and also if the Kubernetes cluster is healthy as failures in one component can have an adverse impact on other components. Kraken does this by:
 - Having built in checks for pod and node based scenarios to ensure the expected number of replicas and nodes are up. 
-- Leveraging [Cerberus](../cerberus/_index.md) to monitor the cluster under test and consuming the aggregated go/no-go signal to determine pass/fail post chaos. It is highly recommended to turn on the Cerberus health check feature available in Krkn. Instructions on installing and setting up Cerberus can be found [here](../cerberus/_index.md) or can be installed from Krkn using the [instructions](../installation/_index.md). 
+- Leveraging [Cerberus](../cerberus/_index.md) to monitor the cluster under test and consuming the aggregated go/no-go signal to determine pass/fail post chaos. It is highly recommended to turn on the Cerberus health check feature available in Kraken. Instructions on installing and setting up Cerberus can be found [here](../cerberus/_index.md) or can be installed from Kraken using the [instructions](../installation/_index.md). 
 - Leveraging built-in alert collection feature to fail the runs in case of critical alerts.
 - Fail test if certain metrics aren't met at the end of the run
 
