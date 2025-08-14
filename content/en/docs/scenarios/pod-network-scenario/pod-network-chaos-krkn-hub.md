@@ -49,7 +49,7 @@ See list of variables that apply to all scenarios [here](/docs/scenarios/all-sce
 Parameter               | Description                                                           | Default
 ----------------------- | -----------------------------------------------------------------     | ------------------------------------ |
 NAMESPACE               | Required - Namespace of the pod to which filter need to be applied    | ""                                     |
-IMAGE               | Image used to disrupt network on a pod   | "quay.io/krkn-chaos/krkn:tools"                                     |
+TOOL_NETWORK_IMAGE               | Image used to disrupt network on a pod   | "quay.io/krkn-chaos/krkn:tools"                                     |
 LABEL_SELECTOR          | Label of the pod(s) to target                                         | ""                                   | 
 POD_NAME                | When label_selector is not specified, pod matching the name will be selected for the chaos scenario | "" |
 EXCLUDE_LABEL           | Pods matching this label will be excluded from the chaos even if they match other criteria | "" |

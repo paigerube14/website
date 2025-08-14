@@ -65,7 +65,7 @@ EGRESS          | Dictonary of values to set  network latency(latency: 50ms), pa
 Parameter               | Description                                                           | Default
 ----------------------- | -----------------------------------------------------------------     | ------------------------------------ |
 DURATION                | Duration in seconds - during with network chaos will be applied.         | 300                                  |
-IMAGE | Image used to disrupt network on a pod  |  quay.io/krkn-chaos/krkn:tools | 
+TOOL_NETWORK_IMAGE | Image used to disrupt network on a pod  |  quay.io/krkn-chaos/krkn:tools | 
 TARGET_NODE_AND_INTERFACE               |  # Dictionary with key as node name(s) and value as a list of its interfaces to test. For example: {ip-10-0-216-2.us-west-2.compute.internal: [ens5]}      | ""                                   |
 LABEL_SELECTOR          | When NODE_NAME is not specified, a node with matching label_selector is selected for running.          | node-role.kubernetes.io/master       |
 INSTANCE_COUNT          | Targeted instance count matching the label selector                   | 1                                   |
