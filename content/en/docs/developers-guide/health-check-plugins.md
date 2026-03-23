@@ -139,11 +139,20 @@ class MyServiceHealthCheckPlugin(AbstractHealthCheckPlugin):
 
     def get_health_check_types(self) -> list[str]:
         """
-        Returns the health_check type strings this plugin handles.
-        These must match the `type` field in config.yaml health_checks section.
-        One plugin can handle multiple type strings.
+        Returns the internal type identifiers for this plugin.
+        One plugin can handle multiple type strings, but they must be
+        unique across all plugins.
         """
         return ["my_service_health_check"]
+
+    def get_config_key(self) -> str:
+        """
+        Returns the top-level config.yaml key this plugin reads from.
+        The factory maps this key to the plugin so run_kraken.py discovers
+        and starts it automatically — no code changes needed there.
+        Must be unique across all plugins.
+        """
+        return "my_service_checks"
 
     def increment_iterations(self) -> None:
         """
@@ -204,20 +213,31 @@ class MyServiceHealthCheckPlugin(AbstractHealthCheckPlugin):
             return False
 ```
 
-### 3. Register the Type in `config.yaml`
+### 3. Configure in `config.yaml`
 
-Reference your plugin's type string in your chaos scenario config:
+Add a section using the key returned by `get_config_key()`. The factory discovers this mapping at startup — no changes to `run_kraken.py` are needed:
 
 ```yaml
-health_checks:
-  type: my_service_health_check
+my_service_checks:
   interval: 5
   config:
     endpoint: "http://my-service:8080"
     exit_on_failure: true
 ```
 
-The factory matches the `type` field against the strings returned by `get_health_check_types()` and automatically instantiates your plugin.
+Each plugin owns its own top-level config key. Multiple plugins can be active simultaneously, each reading from their own section:
+
+```yaml
+health_checks:          # read by HttpHealthCheckPlugin
+  interval: 2
+  config:
+    - url: "http://frontend/health"
+
+my_service_checks:      # read by MyServiceHealthCheckPlugin
+  interval: 5
+  config:
+    endpoint: "http://my-service:8080"
+```
 
 ### 4. AbstractHealthCheckPlugin API Reference
 
@@ -236,7 +256,8 @@ Your plugin inherits the following from `AbstractHealthCheckPlugin`:
 | Method | Description |
 |--------|-------------|
 | `run_health_check(config, telemetry_queue)` | Main health check loop, runs in a background thread |
-| `get_health_check_types()` | Returns list of type strings this plugin handles |
+| `get_health_check_types()` | Returns list of internal type identifier strings for this plugin |
+| `get_config_key()` | Returns the top-level `config.yaml` key this plugin reads from (must be unique) |
 | `increment_iterations()` | Increments your iteration counter when called by the factory |
 
 ### 5. Factory Auto-Discovery
