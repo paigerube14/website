@@ -68,6 +68,18 @@ A visual drag-and-drop editor for designing complex chaos workflows. Build graph
 
 Each node is configured exactly like a [single scenario](../run-scenarios/): select a registry, choose a scenario, set mandatory/optional/global parameters, and mount files.
 
+### Global Parameters in Workflows
+
+When configuring global parameters for workflow nodes:
+
+- **Elasticsearch**: Select from saved admin-configured endpoints to index metrics across the entire workflow
+- **Prometheus**: Configure Prometheus integration for metric collection
+- **Cerberus**: Enable cluster health monitoring during scenario execution
+
+{{% notice tip %}}
+Configure **Elasticsearch** in global parameters to track metrics across all nodes in a workflow. This provides centralized observability for complex multi-scenario executions.
+{{% /notice %}}
+
 **Clone**: duplicate a configured node to repeat the same scenario multiple times within the workflow.
 
 ---
