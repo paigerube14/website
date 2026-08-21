@@ -14,6 +14,46 @@ A visual drag-and-drop editor for designing complex chaos workflows. Build graph
 
 ---
 
+## Creating and Saving Workflows
+
+### Creating a New Workflow
+
+1. Navigate to **Chaos Studio** from the main navigation
+2. Click the **"New Workflow"** button to start a blank canvas
+3. Give your workflow a meaningful name that describes its purpose
+
+### Adding Nodes
+
+1. Click the **"Add Node"** button or drag from the node palette
+2. Position nodes on the canvas by dragging them
+3. Configure each node by clicking on it and selecting:
+   - **Registry**: Choose your scenario source
+   - **Scenario**: Select the chaos scenario to run
+   - **Parameters**: Set mandatory and optional parameters
+   - **Files**: Mount any required configuration files
+
+### Connecting Nodes
+
+- Click and drag from a node's output port to another node's input port to create dependencies
+- Serial execution: connect nodes in a chain (A → B → C)
+- Parallel execution: connect one node to multiple targets (A → B and A → C)
+
+### Saving Your Workflow
+
+1. Click the **"Save"** button in the top toolbar
+2. The workflow is automatically saved to your workspace
+3. Saved workflows appear in the **Chaos Studio** workflow list
+4. You can edit saved workflows by selecting them from the list
+
+### Video Walkthrough
+
+<video controls style="width: 100%; max-width: 800px; margin: 1rem 0;">
+  <source src="/videos/workflow.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+---
+
 ## Visual Editor
 
 - **Nodes** represent individual krkn scenarios
