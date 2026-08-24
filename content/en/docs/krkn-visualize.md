@@ -76,7 +76,7 @@ These dashboards filter by **run UUID** (from Elasticsearch) to show metrics spe
 | PVC Scenarios | `Chaos/pvc-scenarios.json` | PVC recovery time, attach/detach duration | `pvc-scenarios` |
 | Time Scenarios | `Chaos/time-scenarios.json` | Clock skew duration, NTP recovery time | `time-scenarios` |
 | SYN Flood Scenarios | `Chaos/syn-flood-scenarios.json` | Active connection count during flood, service recovery time | `syn-flood` |
-| KubeVirt Disruption | `Chaos/kubevirt-disruption.json` | VM recovery time, OVN disruption impact, console health | `kubevirt-vm-outage` |
+| KubeVirt Disruption | `Chaos/kubevirt-disruption.json` | VM recovery time, OVN disruption impact, console health | `vmi-outage` |
 | Application Outage Scenarios | `Chaos/app-scenarios.json` | Console health/downtime duration, etcd latency, OVN master CPU | `application-outages` |
 
 ---
