@@ -49,6 +49,20 @@ Each scenario defines its own parameter set, divided into three categories:
 | **Optional** | Fine-grained control over scenario behavior (label selectors, timing, filters) |
 | **Global** | Framework-level settings (Elasticsearch, Prometheus, Cerberus integration). Applied only if modified from defaults |
 
+#### Elasticsearch in Global Parameters
+
+When configuring **Global** parameters, you can select a saved Elasticsearch endpoint to index scenario metrics and telemetry:
+
+1. Expand the **Global** parameters section
+2. Locate the **Elasticsearch** dropdown
+3. Select from available saved configurations (configured by your [admin](../../administration/elasticsearch-management/))
+
+{{% notice info %}}
+You can **select** from saved Elasticsearch configurations but **cannot add** new ones. Contact your administrator to add additional Elasticsearch endpoints.
+{{% /notice %}}
+
+Selecting an Elasticsearch configuration automatically applies connection details (URL, index, credentials) without requiring manual input.
+
 ![Mandatory Parameters](/images/krkn-operator/scenario-mandatory.png)
 ![Optional Parameters](/images/krkn-operator/scenario-optional.png)
 ![Global Options](/images/krkn-operator/scenario-global.png)

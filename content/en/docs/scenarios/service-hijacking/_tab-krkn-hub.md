@@ -42,7 +42,7 @@ $ docker inspect <container-name or container-id> \
   --format "{{.State.ExitCode}}" # Outputs exit code which can considered as pass/fail for the scenario
 ```
 
-{{% alert title="Tip" %}} ecause the container runs with a non-root user, ensure the kube config is globally readable before mounting it in the container. You can achieve this with the following commands:
+{{% alert title="Tip" %}} Because the container runs with a non-root user, ensure the kube config is globally readable before mounting it in the container. You can achieve this with the following commands:
 ```bash
 kubectl config view --flatten > ~/kubeconfig && chmod 444 ~/kubeconfig && docker run $(./get_docker_params.sh) --name=<container_name> --net=host --pull=always -v ~/kubeconfig:/home/krkn/.kube/config:Z -d containers.krkn-chaos.dev/krkn-chaos/krkn-hub:<scenario>
 ```
@@ -59,9 +59,7 @@ export <parameter_name>=<value>
 
 See list of variables that apply to all scenarios [here](/docs/scenarios/all-scenario-env.md) that can be used/set in addition to these scenario specific variables
 
-| Parameter        | Description                                                                                                                                                                                                                                        | Type   | Default    |
-|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|------------|
-| SCENARIO_BASE64  | **Required.** Base64 encoded service-hijacking scenario file. Note that the __-w0__ option in the command substitution `SCENARIO_BASE64="$(base64 -w0 <scenario_file>)"` is __mandatory__ in order to remove line breaks from the base64 command output | string | (required) |
+{{< param-table scenario="service-hijacking" source="krkn-hub" >}}
 
 
 A sample scenario file can be found in the [Krkn tab](#tab-krkn) under [Sample Scenario](#sample-scenario); customize it based on your wanted response codes for API calls
