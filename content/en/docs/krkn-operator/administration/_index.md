@@ -44,3 +44,4 @@ Every user **must** belong to a group. A user without a group has no access to t
 | [User Management](user-management/) | Create groups and users, assign permissions |
 | [Registry Management](registry-management/) | Configure private container registries and visibility |
 | [Provider Configuration](provider-configuration/) | Configure target providers (ACM integration) |
+| [Elasticsearch Management](elasticsearch-management/) | Configure saved Elasticsearch endpoints for observability |

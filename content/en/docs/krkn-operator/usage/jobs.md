@@ -23,6 +23,21 @@ A single scenario execution on one or more target clusters. For each run you can
 - **Execution outcome** (success, failure)
 - **Console logs** of the krkn pod that executed the scenario
 
+#### Replay & Edit
+
+Single runs can be **replayed** to re-execute the same scenario with the same configuration. You can also **edit the details** before replaying to modify:
+
+- Target cluster(s)
+- Scenario parameters
+- Configuration values
+- Run Name
+
+This allows you to quickly iterate on chaos experiments or run the same test across different environments.
+
+![Replay Run](/images/krkn-operator/replay.png)
+
+
+
 ### Graph Run (Chaos Studio)
 
 A workflow execution created through [Chaos Studio](../chaos-studio/). The execution is displayed as a graph where each node represents an individual krkn scenario. For each node you can inspect the outcome and logs independently.
