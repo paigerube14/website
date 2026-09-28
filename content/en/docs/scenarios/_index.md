@@ -175,8 +175,8 @@ Many pod scenarios now support the `exclude_label` parameter to protect critical
 </div>
 
 <div class="scenario-card">
-<h3><a href="kubevirt-outage/">KubeVirt VM Outage</a></h3>
-<span class="scenario-badge">kubevirt_vm_outage</span>
+<h3><a href="vmi-outage/">KubeVirt VM Outage</a></h3>
+<span class="scenario-badge">vmi_outage</span>
 <p class="scenario-description">Simulates VM-level disruptions by deleting Virtual Machine Instances to test resilience and recovery</p>
 <div class="cloud-badges">
 <span class="cloud-badge cloud-badge--agnostic">Cloud Agnostic</span>
