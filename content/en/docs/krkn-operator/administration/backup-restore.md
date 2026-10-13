@@ -18,6 +18,13 @@ The backup also includes the operator-managed secrets required for these setting
 
 This feature is not a complete Kubernetes or cluster backup. It does not include runtime registration objects, ACM integration data, uploaded files, file metadata, or the JWT signing key.
 
+<div class="krkn-video">
+  <video controls width="100%" preload="metadata">
+    <source src="/videos/backup-restore.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 ---
 
 ## Creating a Backup
