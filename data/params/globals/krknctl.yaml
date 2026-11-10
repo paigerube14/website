@@ -371,7 +371,7 @@ params:
   description_source: krknctl
   group: prometheus
   type: string
-  default: ''
+  default: during
 - name: alerts-exit-on-failure
   description: Fail the run when a critical or error Prometheus alert health check fails
   description_source: krknctl
